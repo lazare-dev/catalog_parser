@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: catalog-parser
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn web_app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+    healthCheckPath: /
+    autoDeploy: true
+    ipAllowList:
+      - source: 0.0.0.0/0 # Allow all IP addresses by default
+      # Optional: restrict to specific IP addresses
+      # - source: 123.45.67.89/32
+      # - source: 98.76.54.32/32

@@ -1,0 +1,387 @@
+2025-04-12 00:15:44,480 - utils.error_handler - INFO - Logging initialized
+2025-04-12 00:15:44,480 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 00:15:44,480 - __main__ - INFO - Starting to parse: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 00:15:44,480 - utils.file_detector - INFO - Detecting file type for: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 00:15:44,480 - utils.file_detector - INFO - Detected file type by extension: numbers
+2025-04-12 00:15:44,495 - parsers.base_parser - INFO - Initializing parser for file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 00:15:44,495 - utils.manufacturer_detector - DEBUG - Initialized manufacturer detector with 20 manufacturers
+2025-04-12 00:15:44,495 - parsers.base_parser - INFO - Starting parsing of file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 00:15:44,495 - parsers.numbers_parser - INFO - Reading Numbers file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 00:15:44,503 - parsers.numbers_parser - DEBUG - Index.json not found
+2025-04-12 00:15:44,503 - parsers.numbers_parser - DEBUG - document.xml not found
+2025-04-12 00:15:44,503 - parsers.numbers_parser - DEBUG - Preview.xml not found
+2025-04-12 00:15:44,506 - parsers.numbers_parser - ERROR - Error processing Numbers file: Could not extract data from Numbers file using any available method
+2025-04-12 00:15:44,506 - parsers.base_parser - ERROR - Error parsing file RETAIL PRICELIST_GBP_UK_010524.numbers: Error processing Numbers file: Could not extract data from Numbers file using any available method
+2025-04-12 00:15:44,508 - utils.error_handler - ERROR - Error: ParserError: Error parsing file: Error processing Numbers file: Could not extract data from Numbers file using any available method - Context: Error parsing file: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/numbers_parser.py", line 73, in read_file
+    self._parse_numbers_format()
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/numbers_parser.py", line 112, in _parse_numbers_format
+    raise FileError("Could not extract data from Numbers file using any available method")
+utils.error_handler.FileError: Could not extract data from Numbers file using any available method
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/base_parser.py", line 249, in parse
+    self.read_file()
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/numbers_parser.py", line 89, in read_file
+    raise FileError(error_msg)
+utils.error_handler.FileError: Error processing Numbers file: Could not extract data from Numbers file using any available method
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/catalog_parser.py", line 74, in parse_file
+    parsed_data = parser.parse()
+                  ^^^^^^^^^^^^^^
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/base_parser.py", line 265, in parse
+    raise ParserError(f"Error parsing file: {str(e)}")
+utils.error_handler.ParserError: Error parsing file: Error processing Numbers file: Could not extract data from Numbers file using any available method
+2025-04-12 00:16:46,427 - utils.error_handler - INFO - Logging initialized
+2025-04-12 00:16:46,427 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 00:16:46,427 - __main__ - INFO - Starting to parse: cats/Adam Hall Price List.xlsx
+2025-04-12 00:16:46,427 - utils.file_detector - INFO - Detecting file type for: cats/Adam Hall Price List.xlsx
+2025-04-12 00:16:46,427 - utils.file_detector - INFO - Detected file type by extension: excel
+2025-04-12 00:16:48,023 - parsers.base_parser - INFO - Initializing parser for file: Adam Hall Price List.xlsx
+2025-04-12 00:16:48,023 - utils.manufacturer_detector - DEBUG - Initialized manufacturer detector with 20 manufacturers
+2025-04-12 00:16:48,023 - parsers.base_parser - INFO - Starting parsing of file: Adam Hall Price List.xlsx
+2025-04-12 00:16:48,023 - parsers.excel_parser - INFO - Reading Excel file: Adam Hall Price List.xlsx
+2025-04-12 00:16:48,647 - parsers.excel_parser - INFO - Selected sheet: Sheet1
+2025-04-12 00:16:48,731 - parsers.excel_parser - INFO - Successfully read Excel file with sheets: ['Sheet1']
+2025-04-12 00:16:48,731 - parsers.excel_parser - INFO - Detecting headers in Excel file
+2025-04-12 00:16:48,731 - parsers.excel_parser - INFO - Detected 26 headers: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer Sku', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP', 'Discontinued', 'Column17', 'Column18', 'Column19', 'Column20', 'Column21', 'Column22', 'Column23', 'Column24', 'Column25', 'Column26']
+2025-04-12 00:16:48,731 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 00:16:48,731 - utils.column_mapper - INFO - Mapping 26 headers to target fields
+2025-04-12 00:16:48,731 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 00:16:48,735 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 00:16:48,735 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 00:16:48,735 - utils.column_mapper - INFO - Mapped 16/18 fields
+2025-04-12 00:16:48,735 - parsers.base_parser - INFO - Field mapping results: {'SKU': 'SKU', 'Model': 'Model', 'Category Group': 'Category Group', 'Category': 'Category', 'Manufacturer': 'Manufacturer', 'Manufacturer SKU': 'Manufacturer Sku', 'Image URL': 'Image URL', 'Document Name': 'Document Name', 'Document URL': 'Document URL', 'Unit Of Measure': 'Unit Of Measure', 'Buy Cost': 'Buy Cost', 'Trade Price': 'Trade Price', 'Discontinued': 'Discontinued', 'Short Description': 'Short Description', 'Long Description': 'Long Description', 'MSRP GBP': 'MSRP'}
+2025-04-12 00:16:48,735 - parsers.base_parser - WARNING - Unmapped target fields: ['MSRP USD', 'MSRP EUR']
+2025-04-12 00:16:48,735 - parsers.base_parser - INFO - Transforming data to target schema
+2025-04-12 00:16:48,771 - parsers.base_parser - INFO - Transformed 8517 rows
+2025-04-12 00:16:48,902 - parsers.base_parser - INFO - Successfully parsed 8517 rows from Adam Hall Price List.xlsx
+2025-04-12 00:16:48,902 - __main__ - INFO - Successfully parsed 8517 records from cats/Adam Hall Price List.xlsx
+2025-04-12 00:16:48,939 - __main__ - INFO - Saved 8517 records to output/adam_hall.csv
+2025-04-12 00:16:48,940 - __main__ - INFO - Results saved to: output/adam_hall.csv
+2025-04-12 08:28:40,142 - utils.error_handler - INFO - Logging initialized
+2025-04-12 08:28:40,143 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 08:28:40,143 - __main__ - INFO - Starting to parse: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:28:40,143 - utils.file_detector - INFO - Detecting file type for: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:28:40,143 - utils.file_detector - INFO - Detected file type by extension: numbers
+2025-04-12 08:28:40,204 - parsers.base_parser - INFO - Initializing parser for file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:28:40,204 - utils.manufacturer_detector - DEBUG - Initialized manufacturer detector with 20 manufacturers
+2025-04-12 08:28:40,204 - parsers.base_parser - INFO - Starting parsing of file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:28:40,204 - parsers.numbers_parser - INFO - Reading Numbers file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:28:40,214 - parsers.numbers_parser - DEBUG - Index.json not found
+2025-04-12 08:28:40,214 - parsers.numbers_parser - DEBUG - document.xml not found
+2025-04-12 08:28:40,214 - parsers.numbers_parser - DEBUG - Preview.xml not found
+2025-04-12 08:28:40,217 - parsers.numbers_parser - ERROR - Error processing Numbers file: Could not extract data from Numbers file using any available method
+2025-04-12 08:28:40,217 - parsers.base_parser - ERROR - Error parsing file RETAIL PRICELIST_GBP_UK_010524.numbers: Error processing Numbers file: Could not extract data from Numbers file using any available method
+2025-04-12 08:28:40,221 - utils.error_handler - ERROR - Error: ParserError: Error parsing file: Error processing Numbers file: Could not extract data from Numbers file using any available method - Context: Error parsing file: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/numbers_parser.py", line 73, in read_file
+    self._parse_numbers_format()
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/numbers_parser.py", line 112, in _parse_numbers_format
+    raise FileError("Could not extract data from Numbers file using any available method")
+utils.error_handler.FileError: Could not extract data from Numbers file using any available method
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/base_parser.py", line 249, in parse
+    self.read_file()
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/numbers_parser.py", line 89, in read_file
+    raise FileError(error_msg)
+utils.error_handler.FileError: Error processing Numbers file: Could not extract data from Numbers file using any available method
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/catalog_parser.py", line 74, in parse_file
+    parsed_data = parser.parse()
+                  ^^^^^^^^^^^^^^
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/base_parser.py", line 265, in parse
+    raise ParserError(f"Error parsing file: {str(e)}")
+utils.error_handler.ParserError: Error parsing file: Error processing Numbers file: Could not extract data from Numbers file using any available method
+2025-04-12 08:39:25,376 - utils.error_handler - INFO - Logging initialized
+2025-04-12 08:39:25,376 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 08:39:25,376 - __main__ - INFO - Starting to parse: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:39:25,376 - utils.file_detector - INFO - Detecting file type for: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:39:25,376 - utils.file_detector - INFO - Detected file type by extension: numbers
+2025-04-12 08:39:25,423 - parsers.base_parser - INFO - Initializing parser for file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:39:25,423 - utils.manufacturer_detector - DEBUG - Initialized manufacturer detector with 20 manufacturers
+2025-04-12 08:39:25,423 - parsers.base_parser - INFO - Starting parsing of file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:39:25,423 - parsers.numbers_parser - INFO - Reading Numbers file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:39:25,425 - parsers.numbers_parser - DEBUG - Files in Numbers archive: ['Data/PresetImageFill1-17.jpg', 'Data/PresetImageFill5-21.jpg', 'Data/PresetImageFill3-19.jpg', 'Data/PresetImageFill4-20.jpg', 'Data/PresetImageFill0-16.jpg', 'Data/PresetImageFill2-18.jpg', 'Data/image1-23.png', 'Data/image1-small-24.png', 'Data/bullet_gbutton_gray-22.png', 'Index/Document.iwa', 'Index/ViewState.iwa', 'Index/CalculationEngine-905330.iwa', 'Index/Tables/Tile-905253.iwa', 'Index/Tables/DataList-905254.iwa', 'Index/Tables/DataList-905255.iwa', 'Index/Tables/DataList-905256.iwa', 'Index/Tables/DataList-905257.iwa', 'Index/Tables/DataList-905258.iwa', 'Index/Tables/DataList-905259.iwa', 'Index/Tables/DataList-905260.iwa']...
+2025-04-12 08:39:25,432 - parsers.numbers_parser - DEBUG - Attempting to extract from IWA files
+2025-04-12 08:39:25,432 - parsers.numbers_parser - DEBUG - No IWA files found
+2025-04-12 08:39:25,432 - parsers.numbers_parser - DEBUG - Index.json not found
+2025-04-12 08:39:25,432 - parsers.numbers_parser - DEBUG - document.xml not found
+2025-04-12 08:39:25,432 - parsers.numbers_parser - DEBUG - QuickLook thumbnail extraction not implemented
+2025-04-12 08:39:25,432 - parsers.numbers_parser - DEBUG - Preview PDF extraction not implemented
+2025-04-12 08:39:25,432 - parsers.numbers_parser - DEBUG - Preview.xml not found
+2025-04-12 08:39:25,433 - parsers.numbers_parser - DEBUG - No XML files found in Numbers archive
+2025-04-12 08:39:25,433 - parsers.numbers_parser - DEBUG - Trying fallback extraction methods
+2025-04-12 08:39:25,440 - parsers.numbers_parser - ERROR - Error processing Numbers file: Could not extract data from Numbers file using any available method
+2025-04-12 08:39:25,440 - parsers.base_parser - ERROR - Error parsing file RETAIL PRICELIST_GBP_UK_010524.numbers: Error processing Numbers file: Could not extract data from Numbers file using any available method
+2025-04-12 08:39:25,443 - utils.error_handler - ERROR - Error: ParserError: Error parsing file: Error processing Numbers file: Could not extract data from Numbers file using any available method - Context: Error parsing file: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/numbers_parser.py", line 80, in read_file
+    self._parse_numbers_format()
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/numbers_parser.py", line 132, in _parse_numbers_format
+    raise FileError("Could not extract data from Numbers file using any available method")
+utils.error_handler.FileError: Could not extract data from Numbers file using any available method
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/base_parser.py", line 249, in parse
+    self.read_file()
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/numbers_parser.py", line 98, in read_file
+    raise FileError(error_msg)
+utils.error_handler.FileError: Error processing Numbers file: Could not extract data from Numbers file using any available method
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/catalog_parser.py", line 74, in parse_file
+    parsed_data = parser.parse()
+                  ^^^^^^^^^^^^^^
+  File "/Users/andrewlazare/Projects/catalog_parser/parsers/base_parser.py", line 265, in parse
+    raise ParserError(f"Error parsing file: {str(e)}")
+utils.error_handler.ParserError: Error parsing file: Error processing Numbers file: Could not extract data from Numbers file using any available method
+2025-04-12 08:49:41,875 - utils.error_handler - INFO - Logging initialized
+2025-04-12 08:49:41,875 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 08:49:41,875 - __main__ - INFO - Starting to parse: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:49:41,875 - utils.file_detector - INFO - Detecting file type for: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:49:41,875 - utils.file_detector - INFO - Detected file type by extension: numbers
+2025-04-12 08:49:41,895 - parsers.base_parser - INFO - Initializing parser for file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:49:41,895 - utils.manufacturer_detector - DEBUG - Initialized manufacturer detector with 20 manufacturers
+2025-04-12 08:49:41,895 - parsers.base_parser - INFO - Starting parsing of file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:49:41,895 - parsers.numbers_parser - INFO - Reading Numbers file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:49:41,896 - parsers.numbers_parser - DEBUG - Files in Numbers archive: ['Data/PresetImageFill1-17.jpg', 'Data/PresetImageFill5-21.jpg', 'Data/PresetImageFill3-19.jpg', 'Data/PresetImageFill4-20.jpg', 'Data/PresetImageFill0-16.jpg', 'Data/PresetImageFill2-18.jpg', 'Data/image1-23.png', 'Data/image1-small-24.png', 'Data/bullet_gbutton_gray-22.png', 'Index/Document.iwa', 'Index/ViewState.iwa', 'Index/CalculationEngine-905330.iwa', 'Index/Tables/Tile-905253.iwa', 'Index/Tables/DataList-905254.iwa', 'Index/Tables/DataList-905255.iwa', 'Index/Tables/DataList-905256.iwa', 'Index/Tables/DataList-905257.iwa', 'Index/Tables/DataList-905258.iwa', 'Index/Tables/DataList-905259.iwa', 'Index/Tables/DataList-905260.iwa']...
+2025-04-12 08:49:41,904 - parsers.numbers_parser - DEBUG - Attempting to extract from IWA files
+2025-04-12 08:49:41,904 - parsers.numbers_parser - DEBUG - Found Tables directory: /var/folders/xc/21w7lhk10n93dxjyy2q0z_r80000gn/T/tmp3xvy6n_h/Index/Tables
+2025-04-12 08:49:41,904 - parsers.numbers_parser - DEBUG - Found 40 IWA files
+2025-04-12 08:49:41,904 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905323.iwa
+2025-04-12 08:49:41,904 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905257.iwa
+2025-04-12 08:49:41,904 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905256.iwa
+2025-04-12 08:49:41,904 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905322.iwa
+2025-04-12 08:49:41,904 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905320.iwa
+2025-04-12 08:49:41,904 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905254.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Extracted 856 text chunks from DataList-905254.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Sample chunk: 0L-ACOUSTICS - RETAIL PRICE LIST GBP/UK - 05/2024
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905255.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905321.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905319.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905325.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905324.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905318.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905326.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905327.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905381.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905370.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905262.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905263.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905261.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Extracted 6 text chunks from DataList-905261.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Sample chunk: Unit prices, EX-VAT, in GBP
+For terms and conditio...
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905260.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905328.iwa
+2025-04-12 08:49:41,906 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905258.iwa
+2025-04-12 08:49:41,907 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905264.iwa
+2025-04-12 08:49:41,907 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905259.iwa
+2025-04-12 08:49:41,907 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905253.iwa
+2025-04-12 08:49:41,907 - parsers.numbers_parser - DEBUG - Extracted 127 text chunks from Tile-905253.iwa
+2025-04-12 08:49:41,907 - parsers.numbers_parser - DEBUG - Sample chunk: :6V
+2025-04-12 08:49:41,907 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905297.iwa
+2025-04-12 08:49:41,908 - parsers.numbers_parser - DEBUG - Extracted 96 text chunks from Tile-905297.iwa
+2025-04-12 08:49:41,908 - parsers.numbers_parser - DEBUG - Sample chunk: i<@H
+2025-04-12 08:49:41,908 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905294.iwa
+2025-04-12 08:49:41,909 - parsers.numbers_parser - DEBUG - Extracted 166 text chunks from Tile-905294.iwa
+2025-04-12 08:49:41,909 - parsers.numbers_parser - DEBUG - Sample chunk: i<@H
+2025-04-12 08:49:41,909 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905301.iwa
+2025-04-12 08:49:41,910 - parsers.numbers_parser - DEBUG - Extracted 28 text chunks from Tile-905301.iwa
+2025-04-12 08:49:41,910 - parsers.numbers_parser - DEBUG - Sample chunk: i<@H
+2025-04-12 08:49:41,910 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905317.iwa
+2025-04-12 08:49:41,910 - parsers.numbers_parser - DEBUG - Processing IWA file: Document.iwa
+2025-04-12 08:49:41,910 - parsers.numbers_parser - DEBUG - Extracted 207 text chunks from Document.iwa
+2025-04-12 08:49:41,910 - parsers.numbers_parser - DEBUG - Sample chunk: en_US:
+2025-04-12 08:49:41,910 - parsers.numbers_parser - DEBUG - Processing IWA file: DocumentStylesheet.iwa
+2025-04-12 08:49:41,912 - parsers.numbers_parser - DEBUG - Extracted 1091 text chunks from DocumentStylesheet.iwa
+2025-04-12 08:49:41,912 - parsers.numbers_parser - DEBUG - Sample chunk: ,
+$captions-0-shapestyle-Object C
+2025-04-12 08:49:41,912 - parsers.numbers_parser - DEBUG - Processing IWA file: Metadata.iwa
+2025-04-12 08:49:41,913 - parsers.numbers_parser - DEBUG - Extracted 141 text chunks from Metadata.iwa
+2025-04-12 08:49:41,913 - parsers.numbers_parser - DEBUG - Sample chunk: $98BD5C40-BD3B-4235-96E4-EA9988FA690F
+2025-04-12 08:49:41,913 - parsers.numbers_parser - DEBUG - Processing IWA file: ViewState.iwa
+2025-04-12 08:49:41,913 - parsers.numbers_parser - DEBUG - Extracted 13 text chunks from ViewState.iwa
+2025-04-12 08:49:41,913 - parsers.numbers_parser - DEBUG - Sample chunk: 3>f
+2025-04-12 08:49:41,913 - parsers.numbers_parser - DEBUG - Processing IWA file: DocumentMetadata.iwa
+2025-04-12 08:49:41,913 - parsers.numbers_parser - DEBUG - Extracted 4 text chunks from DocumentMetadata.iwa
+2025-04-12 08:49:41,913 - parsers.numbers_parser - DEBUG - Sample chunk: =/0K
+2025-04-12 08:49:41,913 - parsers.numbers_parser - DEBUG - Processing IWA file: AnnotationAuthorStorage-905329.iwa
+2025-04-12 08:49:41,913 - parsers.numbers_parser - DEBUG - Processing IWA file: CalculationEngine-905330.iwa
+2025-04-12 08:49:41,915 - parsers.numbers_parser - DEBUG - Extracted 220 text chunks from CalculationEngine-905330.iwa
+2025-04-12 08:49:41,915 - parsers.numbers_parser - DEBUG - Sample chunk: ,(
+2
+2025-04-12 08:49:41,915 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905380.iwa
+2025-04-12 08:49:41,915 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905369.iwa
+2025-04-12 08:49:41,915 - parsers.numbers_parser - DEBUG - Extracted 3 text chunks from HeaderStorageBucket-905369.iwa
+2025-04-12 08:49:41,915 - parsers.numbers_parser - DEBUG - Sample chunk: *@"
+2025-04-12 08:49:41,915 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905368.iwa
+2025-04-12 08:49:41,915 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905379.iwa
+2025-04-12 08:49:41,915 - parsers.numbers_parser - DEBUG - Total extracted text chunks: 2958
+2025-04-12 08:49:41,916 - parsers.numbers_parser - DEBUG - Found potential table with delimiter '	': 71 rows
+2025-04-12 08:49:41,916 - parsers.numbers_parser - INFO - Successfully extracted data using _extract_from_iwa_files
+2025-04-12 08:49:41,916 - parsers.numbers_parser - INFO - Successfully extracted data from Numbers: 71 rows
+2025-04-12 08:49:41,919 - parsers.numbers_parser - INFO - Detecting headers in Numbers file
+2025-04-12 08:49:41,919 - parsers.numbers_parser - INFO - Detected 2 headers: [';', ',']
+2025-04-12 08:49:41,919 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 08:49:41,920 - utils.column_mapper - INFO - Mapping 2 headers to target fields
+2025-04-12 08:49:41,920 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 08:49:41,924 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 08:49:41,924 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 08:49:41,924 - utils.column_mapper - INFO - Mapped 0/18 fields
+2025-04-12 08:49:41,924 - parsers.base_parser - INFO - Field mapping results: {}
+2025-04-12 08:49:41,924 - parsers.base_parser - WARNING - Unmapped target fields: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer SKU', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP GBP', 'MSRP USD', 'MSRP EUR', 'Discontinued']
+2025-04-12 08:49:41,924 - parsers.base_parser - INFO - Transforming data to target schema
+2025-04-12 08:49:41,924 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 08:49:41,924 - utils.column_mapper - INFO - Mapping 2 headers to target fields
+2025-04-12 08:49:41,924 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 08:49:41,924 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 08:49:41,924 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 08:49:41,924 - utils.column_mapper - INFO - Mapped 0/18 fields
+2025-04-12 08:49:41,924 - parsers.base_parser - INFO - Field mapping results: {}
+2025-04-12 08:49:41,924 - parsers.base_parser - WARNING - Unmapped target fields: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer SKU', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP GBP', 'MSRP USD', 'MSRP EUR', 'Discontinued']
+2025-04-12 08:49:41,925 - parsers.base_parser - INFO - Transformed 69 rows
+2025-04-12 08:49:41,925 - utils.manufacturer_detector - DEBUG - No manufacturer detected from filename: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:49:41,925 - parsers.base_parser - INFO - Successfully parsed 69 rows from RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:49:41,925 - __main__ - INFO - Successfully parsed 69 records from cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 08:49:41,926 - __main__ - INFO - Saved 69 records to cats/RETAIL PRICELIST_GBP_UK_010524.csv
+2025-04-12 08:49:41,926 - __main__ - INFO - Results saved to: cats/RETAIL PRICELIST_GBP_UK_010524.csv
+2025-04-12 10:11:28,898 - utils.error_handler - INFO - Logging initialized
+2025-04-12 10:11:28,899 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 10:11:28,899 - __main__ - INFO - Starting to parse: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 10:11:28,899 - utils.file_detector - INFO - Detecting file type for: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 10:11:28,899 - utils.file_detector - INFO - Detected file type by extension: numbers
+2025-04-12 10:11:28,917 - parsers.base_parser - INFO - Initializing parser for file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 10:11:28,917 - utils.manufacturer_detector - DEBUG - Initialized manufacturer detector with 20 manufacturers
+2025-04-12 10:11:28,917 - parsers.base_parser - INFO - Starting parsing of file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 10:11:28,917 - parsers.numbers_parser - INFO - Reading Numbers file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 10:11:28,919 - parsers.numbers_parser - DEBUG - Files in Numbers archive: ['Data/PresetImageFill1-17.jpg', 'Data/PresetImageFill5-21.jpg', 'Data/PresetImageFill3-19.jpg', 'Data/PresetImageFill4-20.jpg', 'Data/PresetImageFill0-16.jpg', 'Data/PresetImageFill2-18.jpg', 'Data/image1-23.png', 'Data/image1-small-24.png', 'Data/bullet_gbutton_gray-22.png', 'Index/Document.iwa', 'Index/ViewState.iwa', 'Index/CalculationEngine-905330.iwa', 'Index/Tables/Tile-905253.iwa', 'Index/Tables/DataList-905254.iwa', 'Index/Tables/DataList-905255.iwa', 'Index/Tables/DataList-905256.iwa', 'Index/Tables/DataList-905257.iwa', 'Index/Tables/DataList-905258.iwa', 'Index/Tables/DataList-905259.iwa', 'Index/Tables/DataList-905260.iwa']...
+2025-04-12 10:11:28,925 - parsers.numbers_parser - DEBUG - Attempting to extract from IWA files
+2025-04-12 10:11:28,925 - parsers.numbers_parser - DEBUG - Found Tables directory: /var/folders/xc/21w7lhk10n93dxjyy2q0z_r80000gn/T/tmp9flhrfc2/Index/Tables
+2025-04-12 10:11:28,925 - parsers.numbers_parser - DEBUG - Found 40 IWA files
+2025-04-12 10:11:28,925 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905323.iwa
+2025-04-12 10:11:28,925 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905257.iwa
+2025-04-12 10:11:28,925 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905256.iwa
+2025-04-12 10:11:28,925 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905322.iwa
+2025-04-12 10:11:28,925 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905320.iwa
+2025-04-12 10:11:28,926 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905254.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Extracted 856 text chunks from DataList-905254.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Sample chunk: 0L-ACOUSTICS - RETAIL PRICE LIST GBP/UK - 05/2024
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905255.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905321.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905319.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905325.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905324.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905318.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905326.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905327.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905381.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905370.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905262.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905263.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905261.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Extracted 6 text chunks from DataList-905261.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Sample chunk: Unit prices, EX-VAT, in GBP
+For terms and conditio...
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905260.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905328.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905258.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905264.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905259.iwa
+2025-04-12 10:11:28,927 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905253.iwa
+2025-04-12 10:11:28,928 - parsers.numbers_parser - DEBUG - Extracted 127 text chunks from Tile-905253.iwa
+2025-04-12 10:11:28,928 - parsers.numbers_parser - DEBUG - Sample chunk: :6V
+2025-04-12 10:11:28,928 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905297.iwa
+2025-04-12 10:11:28,929 - parsers.numbers_parser - DEBUG - Extracted 96 text chunks from Tile-905297.iwa
+2025-04-12 10:11:28,929 - parsers.numbers_parser - DEBUG - Sample chunk: i<@H
+2025-04-12 10:11:28,929 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905294.iwa
+2025-04-12 10:11:28,929 - parsers.numbers_parser - DEBUG - Extracted 166 text chunks from Tile-905294.iwa
+2025-04-12 10:11:28,929 - parsers.numbers_parser - DEBUG - Sample chunk: i<@H
+2025-04-12 10:11:28,929 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905301.iwa
+2025-04-12 10:11:28,930 - parsers.numbers_parser - DEBUG - Extracted 28 text chunks from Tile-905301.iwa
+2025-04-12 10:11:28,930 - parsers.numbers_parser - DEBUG - Sample chunk: i<@H
+2025-04-12 10:11:28,930 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905317.iwa
+2025-04-12 10:11:28,930 - parsers.numbers_parser - DEBUG - Processing IWA file: Document.iwa
+2025-04-12 10:11:28,930 - parsers.numbers_parser - DEBUG - Extracted 207 text chunks from Document.iwa
+2025-04-12 10:11:28,930 - parsers.numbers_parser - DEBUG - Sample chunk: en_US:
+2025-04-12 10:11:28,930 - parsers.numbers_parser - DEBUG - Processing IWA file: DocumentStylesheet.iwa
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Extracted 1091 text chunks from DocumentStylesheet.iwa
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Sample chunk: ,
+$captions-0-shapestyle-Object C
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Processing IWA file: Metadata.iwa
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Extracted 141 text chunks from Metadata.iwa
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Sample chunk: $98BD5C40-BD3B-4235-96E4-EA9988FA690F
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Processing IWA file: ViewState.iwa
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Extracted 13 text chunks from ViewState.iwa
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Sample chunk: 3>f
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Processing IWA file: DocumentMetadata.iwa
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Extracted 4 text chunks from DocumentMetadata.iwa
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Sample chunk: =/0K
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Processing IWA file: AnnotationAuthorStorage-905329.iwa
+2025-04-12 10:11:28,932 - parsers.numbers_parser - DEBUG - Processing IWA file: CalculationEngine-905330.iwa
+2025-04-12 10:11:28,934 - parsers.numbers_parser - DEBUG - Extracted 220 text chunks from CalculationEngine-905330.iwa
+2025-04-12 10:11:28,934 - parsers.numbers_parser - DEBUG - Sample chunk: ,(
+2
+2025-04-12 10:11:28,934 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905380.iwa
+2025-04-12 10:11:28,934 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905369.iwa
+2025-04-12 10:11:28,934 - parsers.numbers_parser - DEBUG - Extracted 3 text chunks from HeaderStorageBucket-905369.iwa
+2025-04-12 10:11:28,934 - parsers.numbers_parser - DEBUG - Sample chunk: *@"
+2025-04-12 10:11:28,934 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905368.iwa
+2025-04-12 10:11:28,934 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905379.iwa
+2025-04-12 10:11:28,934 - parsers.numbers_parser - DEBUG - Total extracted text chunks: 2958
+2025-04-12 10:11:28,934 - parsers.numbers_parser - DEBUG - Found potential table with delimiter '	': 71 rows
+2025-04-12 10:11:28,934 - parsers.numbers_parser - INFO - Successfully extracted data using _extract_from_iwa_files
+2025-04-12 10:11:28,934 - parsers.numbers_parser - INFO - Successfully extracted data from Numbers: 71 rows
+2025-04-12 10:11:28,937 - parsers.numbers_parser - INFO - Detecting headers in Numbers file
+2025-04-12 10:11:28,938 - parsers.numbers_parser - INFO - Detected 2 headers: [';', ',']
+2025-04-12 10:11:28,938 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 10:11:28,938 - utils.column_mapper - INFO - Mapping 2 headers to target fields
+2025-04-12 10:11:28,938 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 10:11:28,941 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 10:11:28,941 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 10:11:28,941 - utils.column_mapper - INFO - Mapped 0/18 fields
+2025-04-12 10:11:28,941 - parsers.base_parser - INFO - Field mapping results: {}
+2025-04-12 10:11:28,941 - parsers.base_parser - WARNING - Unmapped target fields: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer SKU', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP GBP', 'MSRP USD', 'MSRP EUR', 'Discontinued']
+2025-04-12 10:11:28,941 - parsers.base_parser - INFO - Transforming data to target schema
+2025-04-12 10:11:28,941 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 10:11:28,941 - utils.column_mapper - INFO - Mapping 2 headers to target fields
+2025-04-12 10:11:28,942 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 10:11:28,942 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 10:11:28,942 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 10:11:28,942 - utils.column_mapper - INFO - Mapped 0/18 fields
+2025-04-12 10:11:28,942 - parsers.base_parser - INFO - Field mapping results: {}
+2025-04-12 10:11:28,942 - parsers.base_parser - WARNING - Unmapped target fields: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer SKU', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP GBP', 'MSRP USD', 'MSRP EUR', 'Discontinued']
+2025-04-12 10:11:28,942 - parsers.base_parser - INFO - Transformed 69 rows
+2025-04-12 10:11:28,943 - utils.manufacturer_detector - DEBUG - No manufacturer detected from filename: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 10:11:28,943 - parsers.base_parser - INFO - Successfully parsed 69 rows from RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 10:11:28,943 - __main__ - INFO - Successfully parsed 69 records from cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 10:11:28,943 - __main__ - INFO - Saved 69 records to cats/RETAIL PRICELIST_GBP_UK_010524.csv
+2025-04-12 10:11:28,943 - __main__ - INFO - Results saved to: cats/RETAIL PRICELIST_GBP_UK_010524.csv
+2025-04-12 10:38:19,113 - utils.error_handler - INFO - Logging initialized
+2025-04-12 10:38:19,113 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 10:38:19,113 - __main__ - INFO - Starting to parse: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 10:38:19,113 - utils.file_detector - INFO - Detecting file type for: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 10:38:19,113 - utils.file_detector - INFO - Detected file type by extension: numbers
+2025-04-12 10:38:19,145 - utils.error_handler - ERROR - Error: TypeError: Can't instantiate abstract class NumbersParser without an implementation for abstract methods '_iterate_data_rows', 'detect_headers' - Context: Error parsing file: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/catalog_parser.py", line 69, in parse_file
+    parser = parser_class(filename, sheet_index=sheet_index, sheet_name=sheet_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Can't instantiate abstract class NumbersParser without an implementation for abstract methods '_iterate_data_rows', 'detect_headers'
