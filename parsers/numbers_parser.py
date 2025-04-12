@@ -792,7 +792,6 @@ class NumbersParser(BaseParser):
                             return result
         
         return []
-        
     def _chunks_might_be_related(self, chunk1: str, chunk2: str) -> float:
         """
         Check if two chunks might be related (cells in the same row).
@@ -836,3 +835,337 @@ class NumbersParser(BaseParser):
             score += 1.0  # Bonus point for numeric fields
             
         return score
+        
+    def _extract_from_document_xml(self) -> None:
+        """
+        Extract data from Document.xml which exists in older Numbers files.
+        """
+        document_path = os.path.join(self.temp_dir, 'document.xml')
+        if not os.path.exists(document_path):
+            logger.debug("Document.xml not found")
+            return
+            
+        try:
+            tree = ET.parse(document_path)
+            root = tree.getroot()
+            
+            # Look for table elements in the XML
+            tables = root.findall(".//table")
+            
+            if not tables:
+                logger.debug("No tables found in Document.xml")
+                return
+                
+            # Choose the target table
+            target_table = None
+            
+            # First try by name if provided
+            if self.table_name:
+                for table in tables:
+                    if table.get('name') == self.table_name:
+                        target_table = table
+                        break
+                        
+            # Then try by index
+            if not target_table and tables:
+                table_idx = min(self.table_index, len(tables) - 1)
+                target_table = tables[table_idx]
+                
+            if not target_table:
+                logger.debug("Could not find target table in Document.xml")
+                return
+                
+            # Extract rows from the table
+            rows = target_table.findall(".//tr")
+            
+            if not rows:
+                logger.debug("No rows found in target table")
+                return
+                
+            # Process rows
+            table_data = []
+            
+            for row in rows:
+                cells = row.findall(".//td")
+                row_data = [cell.text.strip() if cell.text else "" for cell in cells]
+                table_data.append(row_data)
+                
+            # Ensure consistent row lengths
+            if table_data:
+                max_cols = max(len(row) for row in table_data)
+                table_data = [row + [""] * (max_cols - len(row)) for row in table_data]
+                
+            if len(table_data) > 0:
+                logger.debug(f"Extracted {len(table_data)} rows from Document.xml")
+                self.data = table_data
+                
+        except Exception as e:
+            logger.debug(f"Error processing Document.xml: {str(e)}")
+    
+    def _extract_from_tables_xml(self) -> None:
+        """
+        Extract data from tables.xml which exists in some Numbers files.
+        """
+        tables_path = os.path.join(self.temp_dir, 'Tables', 'tables.xml')
+        if not os.path.exists(tables_path):
+            # Try alternative path
+            tables_path = os.path.join(self.temp_dir, 'tables.xml')
+            if not os.path.exists(tables_path):
+                logger.debug("tables.xml not found")
+                return
+                
+        try:
+            tree = ET.parse(tables_path)
+            root = tree.getroot()
+            
+            # Look for table elements in the XML
+            tables = root.findall(".//table")
+            
+            if not tables:
+                logger.debug("No tables found in tables.xml")
+                return
+                
+            # Choose the target table
+            target_table = None
+            
+            # First try by name if provided
+            if self.table_name:
+                for table in tables:
+                    if table.get('name') == self.table_name:
+                        target_table = table
+                        break
+                        
+            # Then try by index
+            if not target_table and tables:
+                table_idx = min(self.table_index, len(tables) - 1)
+                target_table = tables[table_idx]
+                
+            if not target_table:
+                logger.debug("Could not find target table in tables.xml")
+                return
+                
+            # Extract rows from the table
+            rows = target_table.findall(".//tr")
+            
+            if not rows:
+                logger.debug("No rows found in target table")
+                return
+                
+            # Process rows
+            table_data = []
+            
+            for row in rows:
+                cells = row.findall(".//td")
+                row_data = [cell.text.strip() if cell.text else "" for cell in cells]
+                table_data.append(row_data)
+                
+            # Ensure consistent row lengths
+            if table_data:
+                max_cols = max(len(row) for row in table_data)
+                table_data = [row + [""] * (max_cols - len(row)) for row in table_data]
+                
+            if len(table_data) > 0:
+                logger.debug(f"Extracted {len(table_data)} rows from tables.xml")
+                self.data = table_data
+                
+        except Exception as e:
+            logger.debug(f"Error processing tables.xml: {str(e)}")
+    
+    def _extract_from_quicklook_thumbnail(self) -> None:
+        """
+        Placeholder method for extracting data from QuickLook thumbnail.
+        This would typically use OCR or other image processing to extract data from a preview image.
+        """
+        logger.debug("QuickLook thumbnail extraction not implemented")
+        return
+    
+    def _extract_from_preview_pdf(self) -> None:
+        """
+        Placeholder method for extracting data from preview.pdf.
+        This would typically use a PDF parsing library to extract table data from the PDF preview.
+        """
+        logger.debug("Preview PDF extraction not implemented")
+        return
+    
+    def _extract_from_preview_xml(self) -> None:
+        """
+        Placeholder method for extracting data from preview XML.
+        """
+        logger.debug("Preview XML extraction not implemented")
+        return
+    
+    def _fallback_extraction(self) -> None:
+        """
+        Last resort fallback method to try to extract any usable data.
+        """
+        logger.debug("Attempting fallback extraction")
+        
+        # Try to find any files that might contain data
+        for root, _, files in os.walk(self.temp_dir):
+            for file in files:
+                file_path = os.path.join(root, file)
+                
+                # Skip already processed files
+                if any(part in file_path for part in ['document.xml', 'tables.xml', 'Index', 'preview']):
+                    continue
+                    
+                # Try to extract text from any file that might contain data
+                try:
+                    # For text files
+                    if file.endswith(('.txt', '.csv', '.xml', '.json')):
+                        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                            content = f.read()
+                            
+                        # Look for table-like patterns
+                        lines = content.strip().split('\n')
+                        
+                        # If we have at least a few lines, try to split into cells
+                        if len(lines) >= 3:
+                            for delimiter in ['\t', ',', ';', '|']:
+                                if any(delimiter in line for line in lines):
+                                    table_data = []
+                                    for line in lines:
+                                        cells = [cell.strip() for cell in line.split(delimiter)]
+                                        if len(cells) >= 2:  # At least 2 cells
+                                            table_data.append(cells)
+                                            
+                                    if len(table_data) >= 3:
+                                        # Normalize row lengths
+                                        max_cols = max(len(row) for row in table_data)
+                                        table_data = [row + [""] * (max_cols - len(row)) for row in table_data]
+                                        
+                                        logger.debug(f"Extracted {len(table_data)} rows from {file}")
+                                        self.data = table_data
+                                        return
+                    
+                    # For binary files, try text extraction
+                    elif not file.endswith(('.jpg', '.png', '.gif', '.pdf')):
+                        with open(file_path, 'rb') as f:
+                            content = f.read()
+                            
+                        # Try to extract text chunks
+                        chunks = self._extract_ascii_text(content)
+                        if chunks and len(chunks) >= 10:
+                            table_data = self._reconstruct_table_from_text(chunks)
+                            if table_data and len(table_data) >= 3:
+                                logger.debug(f"Reconstructed table with {len(table_data)} rows from {file}")
+                                self.data = table_data
+                                return
+                                
+                except Exception as e:
+                    logger.debug(f"Error in fallback processing file {file}: {str(e)}")
+        
+        logger.debug("Fallback extraction did not find usable data")
+        
+    def detect_headers(self) -> List[str]:
+        """
+        Detect and extract headers from the data.
+        
+        Returns:
+            List of header strings
+        """
+        if not self.data:
+            logger.warning("No data to detect headers from")
+            return []
+            
+        # If we already have headers, return them
+        if self.headers:
+            return self.headers
+            
+        # Try to find the most likely header row
+        header_keywords = ['id', 'name', 'price', 'cost', 'sku', 'description', 'code', 
+                          'product', 'item', 'quantity', 'catalog', 'retail', 'wholesale',
+                          'model', 'category', 'manufacturer', 'image', 'msrp', 'upc', 'barcode']
+        
+        # Check up to MAX_HEADER_ROWS for a header row
+        max_check = min(MAX_HEADER_ROWS, len(self.data))
+        best_row_idx = 0
+        best_score = -1
+        
+        for i in range(max_check):
+            row = self.data[i]
+            row_text = ' '.join(str(cell).lower() for cell in row)
+            score = 0
+            
+            # Check for header keywords
+            for keyword in header_keywords:
+                if keyword in row_text:
+                    score += 2  # Weight keywords strongly
+                    
+            # Headers usually have shorter cells
+            avg_cell_len = sum(len(str(cell)) for cell in row) / max(1, len(row))
+            if avg_cell_len < 30:  # Headers are usually short
+                score += max(0, (30 - avg_cell_len) / 10)
+                
+            # Headers usually have non-empty cells
+            filled_ratio = sum(1 for cell in row if cell) / max(1, len(row))
+            score += filled_ratio * 2
+            
+            # Headers are less likely to contain only numbers
+            num_cells = sum(1 for cell in row if (cell and str(cell).replace('.', '').isdigit()))
+            if num_cells < len(row) / 2:
+                score += 1
+                
+            if score > best_score:
+                best_score = score
+                best_row_idx = i
+                
+        # Set the header row index
+        self.header_row_index = best_row_idx
+        
+        # Extract headers from the identified row
+        headers = [str(cell).strip() for cell in self.data[best_row_idx]]
+        
+        # Ensure no empty headers
+        for i in range(len(headers)):
+            if not headers[i]:
+                headers[i] = f"Column{i+1}"
+                
+        # Ensure unique headers
+        seen = set()
+        for i in range(len(headers)):
+            original = headers[i]
+            counter = 1
+            while headers[i] in seen:
+                headers[i] = f"{original}_{counter}"
+                counter += 1
+            seen.add(headers[i])
+            
+        self.headers = headers
+        logger.info(f"Detected headers: {self.headers}")
+        return self.headers
+    
+    def _iterate_data_rows(self) -> Iterator[Dict[str, Any]]:
+        """
+        Iterate through data rows, converting each to a dictionary.
+        
+        Yields:
+            Dictionary for each data row
+        """
+        if not self.data:
+            logger.warning("No data to iterate through")
+            return
+            
+        if not self.headers:
+            self.headers = self.detect_headers()
+            
+        # Skip the header row
+        start_row = self.header_row_index + 1
+        
+        for i in range(start_row, len(self.data)):
+            row = self.data[i]
+            
+            # Skip completely empty rows
+            if not any(cell for cell in row):
+                continue
+                
+            # Pad or truncate row to match header length
+            if len(row) < len(self.headers):
+                row = row + [""] * (len(self.headers) - len(row))
+            elif len(row) > len(self.headers):
+                row = row[:len(self.headers)]
+                
+            # Create dictionary using headers as keys
+            row_dict = {header: value for header, value in zip(self.headers, row)}
+            
+            yield row_dict

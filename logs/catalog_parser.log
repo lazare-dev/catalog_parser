@@ -385,3 +385,413 @@ Traceback (most recent call last):
     parser = parser_class(filename, sheet_index=sheet_index, sheet_name=sheet_name)
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Can't instantiate abstract class NumbersParser without an implementation for abstract methods '_iterate_data_rows', 'detect_headers'
+2025-04-12 13:48:18,130 - utils.error_handler - INFO - Logging initialized
+2025-04-12 13:48:18,130 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 13:48:18,130 - __main__ - INFO - Starting to parse: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:48:18,130 - utils.file_detector - INFO - Detecting file type for: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:48:18,130 - utils.file_detector - INFO - Detected file type by extension: numbers
+2025-04-12 13:48:18,175 - utils.error_handler - ERROR - Error: TypeError: Can't instantiate abstract class NumbersParser without an implementation for abstract methods '_iterate_data_rows', 'detect_headers' - Context: Error parsing file: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+Traceback (most recent call last):
+  File "/Users/andrewlazare/Projects/catalog_parser/catalog_parser.py", line 69, in parse_file
+    parser = parser_class(filename, sheet_index=sheet_index, sheet_name=sheet_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Can't instantiate abstract class NumbersParser without an implementation for abstract methods '_iterate_data_rows', 'detect_headers'
+2025-04-12 13:49:11,814 - utils.error_handler - INFO - Logging initialized
+2025-04-12 13:49:11,814 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 13:49:11,814 - __main__ - INFO - Starting to parse: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:49:11,814 - utils.file_detector - INFO - Detecting file type for: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:49:11,814 - utils.file_detector - INFO - Detected file type by extension: numbers
+2025-04-12 13:49:11,833 - parsers.base_parser - INFO - Initializing parser for file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:49:11,833 - utils.manufacturer_detector - DEBUG - Initialized manufacturer detector with 20 manufacturers
+2025-04-12 13:49:11,833 - parsers.base_parser - INFO - Starting parsing of file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:49:11,833 - parsers.numbers_parser - INFO - Reading Numbers file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:49:11,834 - parsers.numbers_parser - DEBUG - Files in Numbers archive: ['Data/PresetImageFill1-17.jpg', 'Data/PresetImageFill5-21.jpg', 'Data/PresetImageFill3-19.jpg', 'Data/PresetImageFill4-20.jpg', 'Data/PresetImageFill0-16.jpg', 'Data/PresetImageFill2-18.jpg', 'Data/image1-23.png', 'Data/image1-small-24.png', 'Data/bullet_gbutton_gray-22.png', 'Index/Document.iwa', 'Index/ViewState.iwa', 'Index/CalculationEngine-905330.iwa', 'Index/Tables/Tile-905253.iwa', 'Index/Tables/DataList-905254.iwa', 'Index/Tables/DataList-905255.iwa', 'Index/Tables/DataList-905256.iwa', 'Index/Tables/DataList-905257.iwa', 'Index/Tables/DataList-905258.iwa', 'Index/Tables/DataList-905259.iwa', 'Index/Tables/DataList-905260.iwa']...
+2025-04-12 13:49:11,842 - parsers.numbers_parser - DEBUG - Attempting to extract from IWA files
+2025-04-12 13:49:11,842 - parsers.numbers_parser - DEBUG - Found Tables directory: /var/folders/xc/21w7lhk10n93dxjyy2q0z_r80000gn/T/tmpvz_0oenv/Index/Tables
+2025-04-12 13:49:11,842 - parsers.numbers_parser - DEBUG - Found 40 IWA files
+2025-04-12 13:49:11,842 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905323.iwa
+2025-04-12 13:49:11,842 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905257.iwa
+2025-04-12 13:49:11,842 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905257.iwa: 1 matches
+2025-04-12 13:49:11,842 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905256.iwa
+2025-04-12 13:49:11,842 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905322.iwa
+2025-04-12 13:49:11,842 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905320.iwa
+2025-04-12 13:49:11,842 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905254.iwa
+2025-04-12 13:49:11,843 - parsers.numbers_parser - DEBUG - File DataList-905254.iwa contains potential table markers
+2025-04-12 13:49:11,843 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 12 matches
+2025-04-12 13:49:11,844 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 2 matches
+2025-04-12 13:49:11,844 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 28 matches
+2025-04-12 13:49:11,845 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905255.iwa
+2025-04-12 13:49:11,845 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905321.iwa
+2025-04-12 13:49:11,845 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905319.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905325.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905324.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905318.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905326.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905327.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905381.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905370.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905262.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905263.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905261.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905260.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905328.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905258.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905264.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905259.iwa
+2025-04-12 13:49:11,846 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905253.iwa
+2025-04-12 13:49:11,847 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905253.iwa: 47 matches
+2025-04-12 13:49:11,848 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905253.iwa: 6 matches
+2025-04-12 13:49:11,848 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905297.iwa
+2025-04-12 13:49:11,849 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905297.iwa: 43 matches
+2025-04-12 13:49:11,849 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905297.iwa: 4 matches
+2025-04-12 13:49:11,849 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905294.iwa
+2025-04-12 13:49:11,850 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905294.iwa: 42 matches
+2025-04-12 13:49:11,851 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905294.iwa: 4 matches
+2025-04-12 13:49:11,851 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905301.iwa
+2025-04-12 13:49:11,851 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905301.iwa: 39 matches
+2025-04-12 13:49:11,852 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905301.iwa: 7 matches
+2025-04-12 13:49:11,852 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905317.iwa
+2025-04-12 13:49:11,852 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905323.iwa
+2025-04-12 13:49:11,852 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905257.iwa
+2025-04-12 13:49:11,852 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905257.iwa: 1 matches
+2025-04-12 13:49:11,852 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905256.iwa
+2025-04-12 13:49:11,852 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905322.iwa
+2025-04-12 13:49:11,852 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905320.iwa
+2025-04-12 13:49:11,852 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905254.iwa
+2025-04-12 13:49:11,852 - parsers.numbers_parser - DEBUG - File DataList-905254.iwa contains potential table markers
+2025-04-12 13:49:11,853 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 12 matches
+2025-04-12 13:49:11,853 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 2 matches
+2025-04-12 13:49:11,854 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 28 matches
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905255.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905321.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905319.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905325.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905324.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905318.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905326.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905327.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905381.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905370.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905262.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905263.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905261.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905260.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905328.iwa
+2025-04-12 13:49:11,855 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905258.iwa
+2025-04-12 13:49:11,856 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905264.iwa
+2025-04-12 13:49:11,856 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905259.iwa
+2025-04-12 13:49:11,856 - parsers.numbers_parser - DEBUG - Processing IWA file: Document.iwa
+2025-04-12 13:49:11,856 - parsers.numbers_parser - DEBUG - Found structured patterns in Document.iwa: 32 matches
+2025-04-12 13:49:11,856 - parsers.numbers_parser - DEBUG - Found structured patterns in Document.iwa: 1 matches
+2025-04-12 13:49:11,856 - parsers.numbers_parser - DEBUG - Found structured patterns in Document.iwa: 25 matches
+2025-04-12 13:49:11,856 - parsers.numbers_parser - DEBUG - Processing IWA file: DocumentStylesheet.iwa
+2025-04-12 13:49:11,858 - parsers.numbers_parser - DEBUG - Found structured patterns in DocumentStylesheet.iwa: 136 matches
+2025-04-12 13:49:11,859 - parsers.numbers_parser - DEBUG - Found structured patterns in DocumentStylesheet.iwa: 261 matches
+2025-04-12 13:49:11,861 - parsers.numbers_parser - DEBUG - Processing IWA file: Metadata.iwa
+2025-04-12 13:49:11,861 - parsers.numbers_parser - DEBUG - Found structured patterns in Metadata.iwa: 2 matches
+2025-04-12 13:49:11,861 - parsers.numbers_parser - DEBUG - Found structured patterns in Metadata.iwa: 3 matches
+2025-04-12 13:49:11,862 - parsers.numbers_parser - DEBUG - Processing IWA file: ViewState.iwa
+2025-04-12 13:49:11,862 - parsers.numbers_parser - DEBUG - Found structured patterns in ViewState.iwa: 3 matches
+2025-04-12 13:49:11,862 - parsers.numbers_parser - DEBUG - Found structured patterns in ViewState.iwa: 1 matches
+2025-04-12 13:49:11,862 - parsers.numbers_parser - DEBUG - Processing IWA file: DocumentMetadata.iwa
+2025-04-12 13:49:11,862 - parsers.numbers_parser - DEBUG - Processing IWA file: AnnotationAuthorStorage-905329.iwa
+2025-04-12 13:49:11,862 - parsers.numbers_parser - DEBUG - Processing IWA file: CalculationEngine-905330.iwa
+2025-04-12 13:49:11,864 - parsers.numbers_parser - DEBUG - Found structured patterns in CalculationEngine-905330.iwa: 10 matches
+2025-04-12 13:49:11,865 - parsers.numbers_parser - DEBUG - Found structured patterns in CalculationEngine-905330.iwa: 2009 matches
+2025-04-12 13:49:11,867 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905380.iwa
+2025-04-12 13:49:11,867 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905369.iwa
+2025-04-12 13:49:11,867 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905368.iwa
+2025-04-12 13:49:11,867 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905379.iwa
+2025-04-12 13:49:11,867 - parsers.numbers_parser - DEBUG - Total extracted text chunks: 2298
+2025-04-12 13:49:11,870 - parsers.numbers_parser - DEBUG - Found 114 potential table rows
+2025-04-12 13:49:11,870 - parsers.numbers_parser - INFO - Successfully extracted data using _extract_from_iwa_files
+2025-04-12 13:49:11,870 - parsers.numbers_parser - INFO - Successfully extracted data from Numbers: 114 rows
+2025-04-12 13:49:11,873 - parsers.numbers_parser - INFO - Detected headers: ['on', 'Dr', 'Column3']
+2025-04-12 13:49:11,873 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 13:49:11,873 - utils.column_mapper - INFO - Mapping 3 headers to target fields
+2025-04-12 13:49:11,874 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 13:49:11,877 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 13:49:11,877 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 13:49:11,877 - utils.column_mapper - INFO - Mapped 0/18 fields
+2025-04-12 13:49:11,877 - parsers.base_parser - INFO - Field mapping results: {}
+2025-04-12 13:49:11,877 - parsers.base_parser - WARNING - Unmapped target fields: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer SKU', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP GBP', 'MSRP USD', 'MSRP EUR', 'Discontinued']
+2025-04-12 13:49:11,877 - parsers.base_parser - INFO - Transforming data to target schema
+2025-04-12 13:49:11,877 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 13:49:11,877 - utils.column_mapper - INFO - Mapping 3 headers to target fields
+2025-04-12 13:49:11,877 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 13:49:11,877 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 13:49:11,878 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 13:49:11,878 - utils.column_mapper - INFO - Mapped 0/18 fields
+2025-04-12 13:49:11,878 - parsers.base_parser - INFO - Field mapping results: {}
+2025-04-12 13:49:11,878 - parsers.base_parser - WARNING - Unmapped target fields: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer SKU', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP GBP', 'MSRP USD', 'MSRP EUR', 'Discontinued']
+2025-04-12 13:49:11,878 - parsers.base_parser - INFO - Transformed 108 rows
+2025-04-12 13:49:11,878 - parsers.base_parser - INFO - Successfully parsed 108 rows from RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:49:11,878 - __main__ - INFO - Successfully parsed 108 records from cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:49:11,879 - __main__ - INFO - Saved 108 records to cats/RETAIL PRICELIST_GBP_UK_010524.csv
+2025-04-12 13:49:11,879 - __main__ - INFO - Results saved to: cats/RETAIL PRICELIST_GBP_UK_010524.csv
+2025-04-12 13:57:49,726 - utils.error_handler - INFO - Logging initialized
+2025-04-12 13:57:49,726 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 13:57:49,726 - __main__ - INFO - Starting to parse: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:57:49,726 - utils.file_detector - INFO - Detecting file type for: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:57:49,726 - utils.file_detector - INFO - Detected file type by extension: numbers
+2025-04-12 13:57:49,743 - parsers.base_parser - INFO - Initializing parser for file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:57:49,743 - utils.manufacturer_detector - DEBUG - Initialized manufacturer detector with 20 manufacturers
+2025-04-12 13:57:49,743 - parsers.base_parser - INFO - Starting parsing of file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:57:49,743 - parsers.numbers_parser - INFO - Reading Numbers file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:57:49,744 - parsers.numbers_parser - DEBUG - Files in Numbers archive: ['Data/PresetImageFill1-17.jpg', 'Data/PresetImageFill5-21.jpg', 'Data/PresetImageFill3-19.jpg', 'Data/PresetImageFill4-20.jpg', 'Data/PresetImageFill0-16.jpg', 'Data/PresetImageFill2-18.jpg', 'Data/image1-23.png', 'Data/image1-small-24.png', 'Data/bullet_gbutton_gray-22.png', 'Index/Document.iwa', 'Index/ViewState.iwa', 'Index/CalculationEngine-905330.iwa', 'Index/Tables/Tile-905253.iwa', 'Index/Tables/DataList-905254.iwa', 'Index/Tables/DataList-905255.iwa', 'Index/Tables/DataList-905256.iwa', 'Index/Tables/DataList-905257.iwa', 'Index/Tables/DataList-905258.iwa', 'Index/Tables/DataList-905259.iwa', 'Index/Tables/DataList-905260.iwa']...
+2025-04-12 13:57:49,751 - parsers.numbers_parser - DEBUG - Attempting to extract from IWA files
+2025-04-12 13:57:49,751 - parsers.numbers_parser - DEBUG - Found Tables directory: /var/folders/xc/21w7lhk10n93dxjyy2q0z_r80000gn/T/tmp1bzszogk/Index/Tables
+2025-04-12 13:57:49,751 - parsers.numbers_parser - DEBUG - Found 40 IWA files
+2025-04-12 13:57:49,752 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905323.iwa
+2025-04-12 13:57:49,752 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905257.iwa
+2025-04-12 13:57:49,752 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905257.iwa: 1 matches
+2025-04-12 13:57:49,752 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905256.iwa
+2025-04-12 13:57:49,752 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905322.iwa
+2025-04-12 13:57:49,752 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905320.iwa
+2025-04-12 13:57:49,752 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905254.iwa
+2025-04-12 13:57:49,752 - parsers.numbers_parser - DEBUG - File DataList-905254.iwa contains potential table markers
+2025-04-12 13:57:49,753 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 12 matches
+2025-04-12 13:57:49,753 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 2 matches
+2025-04-12 13:57:49,754 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 28 matches
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905255.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905321.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905319.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905325.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905324.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905318.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905326.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905327.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905381.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905370.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905262.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905263.iwa
+2025-04-12 13:57:49,755 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905261.iwa
+2025-04-12 13:57:49,756 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905260.iwa
+2025-04-12 13:57:49,756 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905328.iwa
+2025-04-12 13:57:49,756 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905258.iwa
+2025-04-12 13:57:49,756 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905264.iwa
+2025-04-12 13:57:49,756 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905259.iwa
+2025-04-12 13:57:49,756 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905253.iwa
+2025-04-12 13:57:49,756 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905253.iwa: 47 matches
+2025-04-12 13:57:49,757 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905253.iwa: 6 matches
+2025-04-12 13:57:49,757 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905297.iwa
+2025-04-12 13:57:49,758 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905297.iwa: 43 matches
+2025-04-12 13:57:49,759 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905297.iwa: 4 matches
+2025-04-12 13:57:49,759 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905294.iwa
+2025-04-12 13:57:49,760 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905294.iwa: 42 matches
+2025-04-12 13:57:49,760 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905294.iwa: 4 matches
+2025-04-12 13:57:49,761 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905301.iwa
+2025-04-12 13:57:49,761 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905301.iwa: 39 matches
+2025-04-12 13:57:49,761 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905301.iwa: 7 matches
+2025-04-12 13:57:49,762 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905317.iwa
+2025-04-12 13:57:49,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905323.iwa
+2025-04-12 13:57:49,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905257.iwa
+2025-04-12 13:57:49,762 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905257.iwa: 1 matches
+2025-04-12 13:57:49,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905256.iwa
+2025-04-12 13:57:49,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905322.iwa
+2025-04-12 13:57:49,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905320.iwa
+2025-04-12 13:57:49,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905254.iwa
+2025-04-12 13:57:49,762 - parsers.numbers_parser - DEBUG - File DataList-905254.iwa contains potential table markers
+2025-04-12 13:57:49,763 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 12 matches
+2025-04-12 13:57:49,763 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 2 matches
+2025-04-12 13:57:49,763 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 28 matches
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905255.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905321.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905319.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905325.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905324.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905318.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905326.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905327.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905381.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905370.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905262.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905263.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905261.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905260.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905328.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905258.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905264.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905259.iwa
+2025-04-12 13:57:49,765 - parsers.numbers_parser - DEBUG - Processing IWA file: Document.iwa
+2025-04-12 13:57:49,766 - parsers.numbers_parser - DEBUG - Found structured patterns in Document.iwa: 32 matches
+2025-04-12 13:57:49,766 - parsers.numbers_parser - DEBUG - Found structured patterns in Document.iwa: 1 matches
+2025-04-12 13:57:49,766 - parsers.numbers_parser - DEBUG - Found structured patterns in Document.iwa: 25 matches
+2025-04-12 13:57:49,766 - parsers.numbers_parser - DEBUG - Processing IWA file: DocumentStylesheet.iwa
+2025-04-12 13:57:49,768 - parsers.numbers_parser - DEBUG - Found structured patterns in DocumentStylesheet.iwa: 136 matches
+2025-04-12 13:57:49,770 - parsers.numbers_parser - DEBUG - Found structured patterns in DocumentStylesheet.iwa: 261 matches
+2025-04-12 13:57:49,772 - parsers.numbers_parser - DEBUG - Processing IWA file: Metadata.iwa
+2025-04-12 13:57:49,773 - parsers.numbers_parser - DEBUG - Found structured patterns in Metadata.iwa: 2 matches
+2025-04-12 13:57:49,774 - parsers.numbers_parser - DEBUG - Found structured patterns in Metadata.iwa: 3 matches
+2025-04-12 13:57:49,774 - parsers.numbers_parser - DEBUG - Processing IWA file: ViewState.iwa
+2025-04-12 13:57:49,774 - parsers.numbers_parser - DEBUG - Found structured patterns in ViewState.iwa: 3 matches
+2025-04-12 13:57:49,774 - parsers.numbers_parser - DEBUG - Found structured patterns in ViewState.iwa: 1 matches
+2025-04-12 13:57:49,774 - parsers.numbers_parser - DEBUG - Processing IWA file: DocumentMetadata.iwa
+2025-04-12 13:57:49,774 - parsers.numbers_parser - DEBUG - Processing IWA file: AnnotationAuthorStorage-905329.iwa
+2025-04-12 13:57:49,774 - parsers.numbers_parser - DEBUG - Processing IWA file: CalculationEngine-905330.iwa
+2025-04-12 13:57:49,776 - parsers.numbers_parser - DEBUG - Found structured patterns in CalculationEngine-905330.iwa: 10 matches
+2025-04-12 13:57:49,777 - parsers.numbers_parser - DEBUG - Found structured patterns in CalculationEngine-905330.iwa: 2009 matches
+2025-04-12 13:57:49,779 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905380.iwa
+2025-04-12 13:57:49,779 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905369.iwa
+2025-04-12 13:57:49,779 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905368.iwa
+2025-04-12 13:57:49,779 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905379.iwa
+2025-04-12 13:57:49,779 - parsers.numbers_parser - DEBUG - Total extracted text chunks: 2298
+2025-04-12 13:57:49,782 - parsers.numbers_parser - DEBUG - Found 114 potential table rows
+2025-04-12 13:57:49,782 - parsers.numbers_parser - INFO - Successfully extracted data using _extract_from_iwa_files
+2025-04-12 13:57:49,782 - parsers.numbers_parser - INFO - Successfully extracted data from Numbers: 114 rows
+2025-04-12 13:57:49,785 - parsers.numbers_parser - INFO - Detected headers: ['on', 'Dr', 'Column3']
+2025-04-12 13:57:49,785 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 13:57:49,785 - utils.column_mapper - INFO - Mapping 3 headers to target fields
+2025-04-12 13:57:49,785 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 13:57:49,789 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 13:57:49,789 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 13:57:49,789 - utils.column_mapper - INFO - Mapped 0/18 fields
+2025-04-12 13:57:49,789 - parsers.base_parser - INFO - Field mapping results: {}
+2025-04-12 13:57:49,789 - parsers.base_parser - WARNING - Unmapped target fields: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer SKU', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP GBP', 'MSRP USD', 'MSRP EUR', 'Discontinued']
+2025-04-12 13:57:49,789 - parsers.base_parser - INFO - Transforming data to target schema
+2025-04-12 13:57:49,789 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 13:57:49,789 - utils.column_mapper - INFO - Mapping 3 headers to target fields
+2025-04-12 13:57:49,789 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 13:57:49,790 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 13:57:49,790 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 13:57:49,790 - utils.column_mapper - INFO - Mapped 0/18 fields
+2025-04-12 13:57:49,790 - parsers.base_parser - INFO - Field mapping results: {}
+2025-04-12 13:57:49,790 - parsers.base_parser - WARNING - Unmapped target fields: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer SKU', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP GBP', 'MSRP USD', 'MSRP EUR', 'Discontinued']
+2025-04-12 13:57:49,790 - parsers.base_parser - INFO - Transformed 108 rows
+2025-04-12 13:57:49,790 - parsers.base_parser - INFO - Successfully parsed 108 rows from RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:57:49,790 - __main__ - INFO - Successfully parsed 108 records from cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 13:57:49,791 - __main__ - INFO - Saved 108 records to cats/RETAIL PRICELIST_GBP_UK_010524.csv
+2025-04-12 13:57:49,791 - __main__ - INFO - Results saved to: cats/RETAIL PRICELIST_GBP_UK_010524.csv
+2025-04-12 14:01:12,731 - utils.error_handler - INFO - Logging initialized
+2025-04-12 14:01:12,731 - __main__ - INFO - Initializing Catalog Parser
+2025-04-12 14:01:12,731 - __main__ - INFO - Starting to parse: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 14:01:12,731 - utils.file_detector - INFO - Detecting file type for: cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 14:01:12,731 - utils.file_detector - INFO - Detected file type by extension: numbers
+2025-04-12 14:01:12,742 - parsers.base_parser - INFO - Initializing parser for file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 14:01:12,742 - utils.manufacturer_detector - DEBUG - Initialized manufacturer detector with 20 manufacturers
+2025-04-12 14:01:12,742 - parsers.base_parser - INFO - Starting parsing of file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 14:01:12,742 - parsers.numbers_parser - INFO - Reading Numbers file: RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 14:01:12,743 - parsers.numbers_parser - DEBUG - Files in Numbers archive: ['Data/PresetImageFill1-17.jpg', 'Data/PresetImageFill5-21.jpg', 'Data/PresetImageFill3-19.jpg', 'Data/PresetImageFill4-20.jpg', 'Data/PresetImageFill0-16.jpg', 'Data/PresetImageFill2-18.jpg', 'Data/image1-23.png', 'Data/image1-small-24.png', 'Data/bullet_gbutton_gray-22.png', 'Index/Document.iwa', 'Index/ViewState.iwa', 'Index/CalculationEngine-905330.iwa', 'Index/Tables/Tile-905253.iwa', 'Index/Tables/DataList-905254.iwa', 'Index/Tables/DataList-905255.iwa', 'Index/Tables/DataList-905256.iwa', 'Index/Tables/DataList-905257.iwa', 'Index/Tables/DataList-905258.iwa', 'Index/Tables/DataList-905259.iwa', 'Index/Tables/DataList-905260.iwa']...
+2025-04-12 14:01:12,749 - parsers.numbers_parser - DEBUG - Attempting to extract from IWA files
+2025-04-12 14:01:12,749 - parsers.numbers_parser - DEBUG - Found Tables directory: /var/folders/xc/21w7lhk10n93dxjyy2q0z_r80000gn/T/tmpgnfu4knu/Index/Tables
+2025-04-12 14:01:12,749 - parsers.numbers_parser - DEBUG - Found 40 IWA files
+2025-04-12 14:01:12,749 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905323.iwa
+2025-04-12 14:01:12,749 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905257.iwa
+2025-04-12 14:01:12,750 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905257.iwa: 1 matches
+2025-04-12 14:01:12,750 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905256.iwa
+2025-04-12 14:01:12,750 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905322.iwa
+2025-04-12 14:01:12,750 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905320.iwa
+2025-04-12 14:01:12,750 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905254.iwa
+2025-04-12 14:01:12,750 - parsers.numbers_parser - DEBUG - File DataList-905254.iwa contains potential table markers
+2025-04-12 14:01:12,751 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 12 matches
+2025-04-12 14:01:12,751 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 2 matches
+2025-04-12 14:01:12,751 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 28 matches
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905255.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905321.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905319.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905325.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905324.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905318.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905326.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905327.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905381.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905370.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905262.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905263.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905261.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905260.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905328.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905258.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905264.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905259.iwa
+2025-04-12 14:01:12,753 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905253.iwa
+2025-04-12 14:01:12,754 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905253.iwa: 47 matches
+2025-04-12 14:01:12,755 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905253.iwa: 6 matches
+2025-04-12 14:01:12,755 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905297.iwa
+2025-04-12 14:01:12,756 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905297.iwa: 43 matches
+2025-04-12 14:01:12,756 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905297.iwa: 4 matches
+2025-04-12 14:01:12,757 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905294.iwa
+2025-04-12 14:01:12,757 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905294.iwa: 42 matches
+2025-04-12 14:01:12,758 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905294.iwa: 4 matches
+2025-04-12 14:01:12,758 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905301.iwa
+2025-04-12 14:01:12,759 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905301.iwa: 39 matches
+2025-04-12 14:01:12,759 - parsers.numbers_parser - DEBUG - Found structured patterns in Tile-905301.iwa: 7 matches
+2025-04-12 14:01:12,759 - parsers.numbers_parser - DEBUG - Processing IWA file: Tile-905317.iwa
+2025-04-12 14:01:12,759 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905323.iwa
+2025-04-12 14:01:12,759 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905257.iwa
+2025-04-12 14:01:12,759 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905257.iwa: 1 matches
+2025-04-12 14:01:12,759 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905256.iwa
+2025-04-12 14:01:12,759 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905322.iwa
+2025-04-12 14:01:12,759 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905320.iwa
+2025-04-12 14:01:12,759 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905254.iwa
+2025-04-12 14:01:12,760 - parsers.numbers_parser - DEBUG - File DataList-905254.iwa contains potential table markers
+2025-04-12 14:01:12,760 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 12 matches
+2025-04-12 14:01:12,761 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 2 matches
+2025-04-12 14:01:12,761 - parsers.numbers_parser - DEBUG - Found structured patterns in DataList-905254.iwa: 28 matches
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905255.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905321.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905319.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905325.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905324.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905318.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905326.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905327.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905381.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905370.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905262.iwa
+2025-04-12 14:01:12,762 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905263.iwa
+2025-04-12 14:01:12,763 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905261.iwa
+2025-04-12 14:01:12,763 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905260.iwa
+2025-04-12 14:01:12,763 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905328.iwa
+2025-04-12 14:01:12,763 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905258.iwa
+2025-04-12 14:01:12,763 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905264.iwa
+2025-04-12 14:01:12,763 - parsers.numbers_parser - DEBUG - Processing IWA file: DataList-905259.iwa
+2025-04-12 14:01:12,763 - parsers.numbers_parser - DEBUG - Processing IWA file: Document.iwa
+2025-04-12 14:01:12,763 - parsers.numbers_parser - DEBUG - Found structured patterns in Document.iwa: 32 matches
+2025-04-12 14:01:12,763 - parsers.numbers_parser - DEBUG - Found structured patterns in Document.iwa: 1 matches
+2025-04-12 14:01:12,763 - parsers.numbers_parser - DEBUG - Found structured patterns in Document.iwa: 25 matches
+2025-04-12 14:01:12,764 - parsers.numbers_parser - DEBUG - Processing IWA file: DocumentStylesheet.iwa
+2025-04-12 14:01:12,765 - parsers.numbers_parser - DEBUG - Found structured patterns in DocumentStylesheet.iwa: 136 matches
+2025-04-12 14:01:12,766 - parsers.numbers_parser - DEBUG - Found structured patterns in DocumentStylesheet.iwa: 261 matches
+2025-04-12 14:01:12,768 - parsers.numbers_parser - DEBUG - Processing IWA file: Metadata.iwa
+2025-04-12 14:01:12,768 - parsers.numbers_parser - DEBUG - Found structured patterns in Metadata.iwa: 2 matches
+2025-04-12 14:01:12,769 - parsers.numbers_parser - DEBUG - Found structured patterns in Metadata.iwa: 3 matches
+2025-04-12 14:01:12,769 - parsers.numbers_parser - DEBUG - Processing IWA file: ViewState.iwa
+2025-04-12 14:01:12,769 - parsers.numbers_parser - DEBUG - Found structured patterns in ViewState.iwa: 3 matches
+2025-04-12 14:01:12,769 - parsers.numbers_parser - DEBUG - Found structured patterns in ViewState.iwa: 1 matches
+2025-04-12 14:01:12,769 - parsers.numbers_parser - DEBUG - Processing IWA file: DocumentMetadata.iwa
+2025-04-12 14:01:12,769 - parsers.numbers_parser - DEBUG - Processing IWA file: AnnotationAuthorStorage-905329.iwa
+2025-04-12 14:01:12,769 - parsers.numbers_parser - DEBUG - Processing IWA file: CalculationEngine-905330.iwa
+2025-04-12 14:01:12,771 - parsers.numbers_parser - DEBUG - Found structured patterns in CalculationEngine-905330.iwa: 10 matches
+2025-04-12 14:01:12,772 - parsers.numbers_parser - DEBUG - Found structured patterns in CalculationEngine-905330.iwa: 2009 matches
+2025-04-12 14:01:12,774 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905380.iwa
+2025-04-12 14:01:12,774 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905369.iwa
+2025-04-12 14:01:12,775 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905368.iwa
+2025-04-12 14:01:12,775 - parsers.numbers_parser - DEBUG - Processing IWA file: HeaderStorageBucket-905379.iwa
+2025-04-12 14:01:12,775 - parsers.numbers_parser - DEBUG - Total extracted text chunks: 2298
+2025-04-12 14:01:12,777 - parsers.numbers_parser - DEBUG - Found 114 potential table rows
+2025-04-12 14:01:12,777 - parsers.numbers_parser - INFO - Successfully extracted data using _extract_from_iwa_files
+2025-04-12 14:01:12,777 - parsers.numbers_parser - INFO - Successfully extracted data from Numbers: 114 rows
+2025-04-12 14:01:12,780 - parsers.numbers_parser - INFO - Detected headers: ['on', 'Dr', 'Column3']
+2025-04-12 14:01:12,780 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 14:01:12,780 - utils.column_mapper - INFO - Mapping 3 headers to target fields
+2025-04-12 14:01:12,780 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 14:01:12,783 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 14:01:12,784 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 14:01:12,784 - utils.column_mapper - INFO - Mapped 0/18 fields
+2025-04-12 14:01:12,784 - parsers.base_parser - INFO - Field mapping results: {}
+2025-04-12 14:01:12,784 - parsers.base_parser - WARNING - Unmapped target fields: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer SKU', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP GBP', 'MSRP USD', 'MSRP EUR', 'Discontinued']
+2025-04-12 14:01:12,784 - parsers.base_parser - INFO - Transforming data to target schema
+2025-04-12 14:01:12,784 - parsers.base_parser - INFO - Mapping source headers to target fields
+2025-04-12 14:01:12,784 - utils.column_mapper - INFO - Mapping 3 headers to target fields
+2025-04-12 14:01:12,784 - utils.column_mapper - DEBUG - Applying pattern matching
+2025-04-12 14:01:12,784 - utils.column_mapper - DEBUG - Handling generic MSRP fields
+2025-04-12 14:01:12,784 - utils.column_mapper - DEBUG - Applying fuzzy matching for remaining fields
+2025-04-12 14:01:12,784 - utils.column_mapper - INFO - Mapped 0/18 fields
+2025-04-12 14:01:12,784 - parsers.base_parser - INFO - Field mapping results: {}
+2025-04-12 14:01:12,785 - parsers.base_parser - WARNING - Unmapped target fields: ['SKU', 'Short Description', 'Long Description', 'Model', 'Category Group', 'Category', 'Manufacturer', 'Manufacturer SKU', 'Image URL', 'Document Name', 'Document URL', 'Unit Of Measure', 'Buy Cost', 'Trade Price', 'MSRP GBP', 'MSRP USD', 'MSRP EUR', 'Discontinued']
+2025-04-12 14:01:12,785 - parsers.base_parser - INFO - Transformed 108 rows
+2025-04-12 14:01:12,785 - parsers.base_parser - INFO - Successfully parsed 108 rows from RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 14:01:12,785 - __main__ - INFO - Successfully parsed 108 records from cats/RETAIL PRICELIST_GBP_UK_010524.numbers
+2025-04-12 14:01:12,785 - __main__ - INFO - Saved 108 records to cats/RETAIL PRICELIST_GBP_UK_010524.csv
+2025-04-12 14:01:12,785 - __main__ - INFO - Results saved to: cats/RETAIL PRICELIST_GBP_UK_010524.csv
