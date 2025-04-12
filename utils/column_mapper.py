@@ -16,6 +16,7 @@ from config.field_mappings import (
     CURRENCY_INDICATORS
 )
 from config.settings import CONFIDENCE_THRESHOLD
+from utils.ml_model import ml_fallback_model
 
 logger = logging.getLogger(__name__)
 
@@ -251,8 +252,22 @@ class ColumnMapper:
             # Only accept match if score is above threshold
             if best_match and best_score >= self.confidence_threshold:
                 results[target_field] = best_match
-    
-    def _calculate_similarity(self, str1: str, str2: str) -> float:
+
+# ML fallback for unmapped headers
+        for i, cleaned_header in enumerate(cleaned_headers):
+            original = original_headers[i]
+            if original in [v[0] for v in results.values()]:
+                continue  # already mapped
+
+            prediction = ml_fallback_model.predict([cleaned_header])[0]
+            confidence = max(ml_fallback_model.predict_proba([cleaned_header])[0])
+
+            if confidence >= self.confidence_threshold:
+                if prediction not in results:
+                    results[prediction] = (original, confidence)
+                    logger.info(f"ML fallback mapped '{original}' to '{prediction}' (confidence: {confidence:.2f})")
+
+def _calculate_similarity(self, str1: str, str2: str) -> float:
         """
         Calculate string similarity using SequenceMatcher.
         

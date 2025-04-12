@@ -140,3 +140,42 @@ CURRENCY_INDICATORS = {
     "USD": ["$", "USD", "dollars", "dollar", "us", "american"],
     "EUR": ["€", "EUR", "euros", "euro", "eu", "european"]
 }
+
+FIELD_PATTERNS.update({
+    "Warranty": [
+        r"(?i)^((warranty|guarantee)\\s*(period|terms|length)?|(product\\s*)?warranty)$",
+        r"(?i)^(coverage\\s*term|included\\s*warranty|support\\s*duration)$"
+    ],
+    "Release Date": [
+        r"(?i)^(release|launch|availability|available)\\s*(date)?$",
+        r"(?i)^(market\\s*date|first\\s*available|intro\\s*date)$"
+    ],
+    "Color": [
+        r"(?i)^color$|colour|finish|shade|paint$",
+        r"(?i)^(housing\\s*color|enclosure\\s*finish|product\\s*color)$"
+    ],
+    "Dimensions": [
+        r"(?i)^(dimensions?|size|height|width|depth|length)$",
+        r"(?i)^(product\\s*(size|dimensions)|overall\\s*dimensions)$"
+    ],
+    "Weight": [
+        r"(?i)^weight$|product\\s*weight|net\\s*weight|gross\\s*weight|shipping\\s*weight"
+    ]
+})
+
+LOCAL_CUSTOM_PATTERNS = {
+    "L-Acoustics": {
+        "Training Product": [
+            r"(?i)^training.*session", r"(?i)^seminar.*session", r"(?i)^education.*license"
+        ],
+        "Support Service": [
+            r"(?i)^ambiance\\s*(8|16|32)", r"(?i)^calibration$", r"(?i)^system\\s*handover"
+        ]
+    }
+}
+
+CURRENCY_INDICATORS.update({
+    "CAD": ["CAD", "C$", "canadian", "can"],
+    "AUD": ["AUD", "A$", "australian"],
+    "JPY": ["JPY", "¥", "yen", "japanese"]
+})
