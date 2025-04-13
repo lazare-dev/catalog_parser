@@ -147,6 +147,29 @@ FIELD_PATTERNS = {
     "Frequency Response": [
         r"(?i)^(frequency\s*(?:response|range|spectrum)|freq\s*resp|audio\s*range)$"
     ],
+
+    "GENERIC_MSRP_PATTERNS": [
+        r"(?i)^(msrp|m\.?s\.?r\.?p\.?)$",
+        r"(?i)^(manufacturer.?s?\s*suggested\s*retail\s*price)$",
+        r"(?i)^(manufacturer.?s?\s*suggested\s*price)$",
+        r"(?i)^(mfr\s*suggested\s*retail\s*price)$", 
+        r"(?i)^(suggested\s*retail\s*price|srp)$",
+        r"(?i)^(recommended\s*retail\s*price|rrp)$",
+        r"(?i)^(list\s*price|retail\s*price|full\s*price)$",
+        r"(?i)^(catalog\s*price|published\s*price|advertised\s*price)$",
+        r"(?i)^(regular\s*price|reg\s*price|original\s*price|orig\s*price)$",
+        r"(?i)^(retail|list|full\s*retail)$",
+        r"(?i)^(uvp|pvpr|prix\s*conseill[ée])$",
+        r"(?i)^(price\s*\(?msrp\)?|price\s*\(?retail\)?|price\s*\(?list\)?)$",
+        r"(?i)^(msrp\s*price|retail\s*msrp|srp\s*price)$",
+        r"(?i)^(man\.?\s*sug\.?\s*ret\.?\s*price)$",
+        r"(?i)^(mfg\.?\s*sug\.?\s*price)$",
+        r"(?i)^(sug\.?\s*ret\.?\s*price)$",
+        r"(?i)^(market\s*price|standard\s*price|base\s*price)$",
+        r"(?i)^(non\s*sale\s*price|non\s*discounted\s*price)$",
+        r"(?i)^(map\s*price|map|minimum\s*advertised\s*price)$",
+        r"(?i)^(msrp\s*price|price\s*msrp|retail\s*price)$"
+    ],
     
     "Coverage": [
         r"(?i)^(coverage|coverage\s*(?:angle|pattern)|dispersion)$"

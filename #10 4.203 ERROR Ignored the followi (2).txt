@@ -1,0 +1,1003 @@
+[2025-04-12 23:20:50 +0000] [27] [INFO] Booting worker with pid: 27
+Apr 12 07:20:54 PM
+[2025-04-12 23:20:54 +0000] [25] [ERROR] Exception in worker process
+Apr 12 07:20:54 PM
+Traceback (most recent call last):
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:20:54 PM
+    worker.init_process()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:20:54 PM
+    self.load_wsgi()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:20:54 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:20:54 PM
+    self.callable = self.load()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:20:54 PM
+    return self.load_wsgiapp()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:20:54 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:20:54 PM
+    mod = importlib.import_module(module)
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:20:54 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:20:54 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:20:54 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:20:54 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:20:54 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:20:54 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:20:54 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:20:54 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:20:54 PM
+    from config.field_mappings import (
+Apr 12 07:20:54 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:20:54 PM
+[2025-04-12 23:20:54 +0000] [25] [INFO] Worker exiting (pid: 25)
+Apr 12 07:20:54 PM
+[2025-04-12 23:20:54 +0000] [26] [ERROR] Exception in worker process
+Apr 12 07:20:54 PM
+Traceback (most recent call last):
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:20:54 PM
+    worker.init_process()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:20:54 PM
+    self.load_wsgi()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:20:54 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:20:54 PM
+    self.callable = self.load()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:20:54 PM
+    return self.load_wsgiapp()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:20:54 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:20:54 PM
+    mod = importlib.import_module(module)
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:20:54 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:20:54 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:20:54 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:20:54 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:20:54 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:20:54 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:20:54 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:20:54 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:20:54 PM
+    from config.field_mappings import (
+Apr 12 07:20:54 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:20:54 PM
+[2025-04-12 23:20:54 +0000] [26] [INFO] Worker exiting (pid: 26)
+Apr 12 07:20:54 PM
+[2025-04-12 23:20:54 +0000] [27] [ERROR] Exception in worker process
+Apr 12 07:20:54 PM
+Traceback (most recent call last):
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:20:54 PM
+    worker.init_process()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:20:54 PM
+    self.load_wsgi()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:20:54 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:20:54 PM
+    self.callable = self.load()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:20:54 PM
+    return self.load_wsgiapp()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:20:54 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:20:54 PM
+    mod = importlib.import_module(module)
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:20:54 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:20:54 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:20:54 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:20:54 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:20:54 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:20:54 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:20:54 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:20:54 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:20:54 PM
+    from config.field_mappings import (
+Apr 12 07:20:54 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:20:54 PM
+[2025-04-12 23:20:54 +0000] [27] [INFO] Worker exiting (pid: 27)
+Apr 12 07:20:54 PM
+[2025-04-12 23:20:54 +0000] [24] [ERROR] Exception in worker process
+Apr 12 07:20:54 PM
+Traceback (most recent call last):
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:20:54 PM
+    worker.init_process()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:20:54 PM
+    self.load_wsgi()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:20:54 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:20:54 PM
+    self.callable = self.load()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:20:54 PM
+    return self.load_wsgiapp()
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:20:54 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:20:54 PM
+    mod = importlib.import_module(module)
+Apr 12 07:20:54 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:20:54 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:20:54 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:20:54 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:20:54 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:20:54 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:20:54 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:20:54 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:20:54 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:20:54 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:20:54 PM
+    from config.field_mappings import (
+Apr 12 07:20:54 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:20:54 PM
+[2025-04-12 23:20:54 +0000] [24] [INFO] Worker exiting (pid: 24)
+Apr 12 07:20:55 PM
+[2025-04-12 23:20:55 +0000] [1] [ERROR] Worker (pid:26) exited with code 3
+Apr 12 07:20:55 PM
+[2025-04-12 23:20:55 +0000] [1] [ERROR] Worker (pid:24) was sent SIGTERM!
+Apr 12 07:20:55 PM
+[2025-04-12 23:20:55 +0000] [1] [ERROR] Worker (pid:27) exited with code 3
+Apr 12 07:20:55 PM
+Traceback (most recent call last):
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 208, in run
+Apr 12 07:20:55 PM
+    self.sleep()
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 359, in sleep
+Apr 12 07:20:55 PM
+    ready = select.select([self.PIPE[0]], [], [], 1.0)
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+Apr 12 07:20:55 PM
+    self.reap_workers()
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 529, in reap_workers
+Apr 12 07:20:55 PM
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Apr 12 07:20:55 PM
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Apr 12 07:20:55 PM
+Apr 12 07:20:55 PM
+During handling of the above exception, another exception occurred:
+Apr 12 07:20:55 PM
+Apr 12 07:20:55 PM
+Traceback (most recent call last):
+Apr 12 07:20:55 PM
+  File "/usr/local/bin/gunicorn", line 8, in <module>
+Apr 12 07:20:55 PM
+    sys.exit(run())
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+Apr 12 07:20:55 PM
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 235, in run
+Apr 12 07:20:55 PM
+    super().run()
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 71, in run
+Apr 12 07:20:55 PM
+    Arbiter(self).run()
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 228, in run
+Apr 12 07:20:55 PM
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 341, in halt
+Apr 12 07:20:55 PM
+    self.stop()
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 395, in stop
+Apr 12 07:20:55 PM
+[2025-04-12 23:20:55 +0000] [1] [ERROR] Worker (pid:25) was sent SIGTERM!
+Apr 12 07:20:55 PM
+    time.sleep(0.1)
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+Apr 12 07:20:55 PM
+    self.reap_workers()
+Apr 12 07:20:55 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 529, in reap_workers
+Apr 12 07:20:55 PM
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Apr 12 07:20:55 PM
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Apr 12 07:21:01 PM
+==> Exited with status 1
+Apr 12 07:21:01 PM
+==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
+Apr 12 07:21:02 PM
+[2025-04-12 23:21:02 +0000] [1] [INFO] Starting gunicorn 23.0.0
+Apr 12 07:21:02 PM
+[2025-04-12 23:21:02 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+Apr 12 07:21:02 PM
+[2025-04-12 23:21:02 +0000] [1] [INFO] Using worker: sync
+Apr 12 07:21:02 PM
+[2025-04-12 23:21:02 +0000] [7] [INFO] Booting worker with pid: 7
+Apr 12 07:21:02 PM
+[2025-04-12 23:21:02 +0000] [8] [INFO] Booting worker with pid: 8
+Apr 12 07:21:02 PM
+[2025-04-12 23:21:02 +0000] [9] [INFO] Booting worker with pid: 9
+Apr 12 07:21:02 PM
+[2025-04-12 23:21:02 +0000] [10] [INFO] Booting worker with pid: 10
+Apr 12 07:21:05 PM
+[2025-04-12 23:21:05 +0000] [10] [ERROR] Exception in worker process
+Apr 12 07:21:05 PM
+Traceback (most recent call last):
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:21:05 PM
+    worker.init_process()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:21:05 PM
+    self.load_wsgi()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:21:05 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:21:05 PM
+    self.callable = self.load()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:21:05 PM
+    return self.load_wsgiapp()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:21:05 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:21:05 PM
+    mod = importlib.import_module(module)
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:21:05 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:21:05 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:21:05 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:21:05 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:21:05 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:21:05 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:21:05 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:21:05 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:21:05 PM
+    from config.field_mappings import (
+Apr 12 07:21:05 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:21:05 PM
+[2025-04-12 23:21:05 +0000] [10] [INFO] Worker exiting (pid: 10)
+Apr 12 07:21:05 PM
+[2025-04-12 23:21:05 +0000] [8] [ERROR] Exception in worker process
+Apr 12 07:21:05 PM
+Traceback (most recent call last):
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:21:05 PM
+    worker.init_process()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:21:05 PM
+    self.load_wsgi()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:21:05 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:21:05 PM
+    self.callable = self.load()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:21:05 PM
+    return self.load_wsgiapp()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:21:05 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:21:05 PM
+    mod = importlib.import_module(module)
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:21:05 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:21:05 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:21:05 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:21:05 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:21:05 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:21:05 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:21:05 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:21:05 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:21:05 PM
+    from config.field_mappings import (
+Apr 12 07:21:05 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:21:05 PM
+[2025-04-12 23:21:05 +0000] [8] [INFO] Worker exiting (pid: 8)
+Apr 12 07:21:05 PM
+[2025-04-12 23:21:05 +0000] [9] [ERROR] Exception in worker process
+Apr 12 07:21:05 PM
+Traceback (most recent call last):
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:21:05 PM
+    worker.init_process()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:21:05 PM
+    self.load_wsgi()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:21:05 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:21:05 PM
+    self.callable = self.load()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:21:05 PM
+    return self.load_wsgiapp()
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:21:05 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:21:05 PM
+    mod = importlib.import_module(module)
+Apr 12 07:21:05 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:21:05 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:21:05 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:21:05 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:21:05 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:21:05 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:21:05 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:21:05 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:21:05 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:21:05 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:21:05 PM
+    from config.field_mappings import (
+Apr 12 07:21:05 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:21:05 PM
+[2025-04-12 23:21:05 +0000] [9] [INFO] Worker exiting (pid: 9)
+Apr 12 07:21:06 PM
+[2025-04-12 23:21:06 +0000] [7] [ERROR] Exception in worker process
+Apr 12 07:21:06 PM
+Traceback (most recent call last):
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:21:06 PM
+    worker.init_process()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:21:06 PM
+    self.load_wsgi()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:21:06 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:21:06 PM
+    self.callable = self.load()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:21:06 PM
+    return self.load_wsgiapp()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:21:06 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:21:06 PM
+    mod = importlib.import_module(module)
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:21:06 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:21:06 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:21:06 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:21:06 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:21:06 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:21:06 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:21:06 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:21:06 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:21:06 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:21:06 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:21:06 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:21:06 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:21:06 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:21:06 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:21:06 PM
+    from config.field_mappings import (
+Apr 12 07:21:06 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:21:06 PM
+[2025-04-12 23:21:06 +0000] [7] [INFO] Worker exiting (pid: 7)
+Apr 12 07:21:06 PM
+[2025-04-12 23:21:06 +0000] [1] [ERROR] Worker (pid:9) exited with code 3
+Apr 12 07:21:06 PM
+[2025-04-12 23:21:06 +0000] [1] [ERROR] Worker (pid:10) exited with code 3
+Apr 12 07:21:06 PM
+[2025-04-12 23:21:06 +0000] [1] [ERROR] Worker (pid:8) was sent SIGTERM!
+Apr 12 07:21:06 PM
+Traceback (most recent call last):
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 208, in run
+Apr 12 07:21:06 PM
+    self.sleep()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 359, in sleep
+Apr 12 07:21:06 PM
+    ready = select.select([self.PIPE[0]], [], [], 1.0)
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+Apr 12 07:21:06 PM
+    self.reap_workers()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 529, in reap_workers
+Apr 12 07:21:06 PM
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Apr 12 07:21:06 PM
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Apr 12 07:21:06 PM
+Apr 12 07:21:06 PM
+During handling of the above exception, another exception occurred:
+Apr 12 07:21:06 PM
+Apr 12 07:21:06 PM
+Traceback (most recent call last):
+Apr 12 07:21:06 PM
+  File "/usr/local/bin/gunicorn", line 8, in <module>
+Apr 12 07:21:06 PM
+    sys.exit(run())
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+Apr 12 07:21:06 PM
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 235, in run
+Apr 12 07:21:06 PM
+    super().run()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 71, in run
+Apr 12 07:21:06 PM
+    Arbiter(self).run()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 228, in run
+Apr 12 07:21:06 PM
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 341, in halt
+Apr 12 07:21:06 PM
+    self.stop()
+Apr 12 07:21:06 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 395, in stop
+Apr 12 07:21:07 PM
+    time.sleep(0.1)
+Apr 12 07:21:07 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+Apr 12 07:21:07 PM
+    self.reap_workers()
+Apr 12 07:21:07 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 529, in reap_workers
+Apr 12 07:21:07 PM
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Apr 12 07:21:07 PM
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Apr 12 07:21:20 PM
+[2025-04-12 23:21:20 +0000] [1] [INFO] Starting gunicorn 23.0.0
+Apr 12 07:21:20 PM
+[2025-04-12 23:21:20 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+Apr 12 07:21:20 PM
+[2025-04-12 23:21:20 +0000] [1] [INFO] Using worker: sync
+Apr 12 07:21:20 PM
+[2025-04-12 23:21:20 +0000] [7] [INFO] Booting worker with pid: 7
+Apr 12 07:21:20 PM
+[2025-04-12 23:21:20 +0000] [8] [INFO] Booting worker with pid: 8
+Apr 12 07:21:20 PM
+[2025-04-12 23:21:20 +0000] [9] [INFO] Booting worker with pid: 9
+Apr 12 07:21:20 PM
+[2025-04-12 23:21:20 +0000] [10] [INFO] Booting worker with pid: 10
+Apr 12 07:21:23 PM
+[2025-04-12 23:21:23 +0000] [8] [ERROR] Exception in worker process
+Apr 12 07:21:23 PM
+Traceback (most recent call last):
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:21:23 PM
+    worker.init_process()
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:21:23 PM
+    self.load_wsgi()
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:21:23 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:21:23 PM
+    self.callable = self.load()
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:21:23 PM
+    return self.load_wsgiapp()
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:21:23 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:21:23 PM
+    mod = importlib.import_module(module)
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:21:23 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:21:23 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:21:23 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:21:23 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:21:23 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:21:23 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:21:23 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:21:23 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:21:23 PM
+    from config.field_mappings import (
+Apr 12 07:21:23 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:21:23 PM
+[2025-04-12 23:21:23 +0000] [8] [INFO] Worker exiting (pid: 8)
+Apr 12 07:21:23 PM
+[2025-04-12 23:21:23 +0000] [9] [ERROR] Exception in worker process
+Apr 12 07:21:23 PM
+Traceback (most recent call last):
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:21:23 PM
+    worker.init_process()
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:21:23 PM
+    self.load_wsgi()
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:21:23 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:21:23 PM
+    self.callable = self.load()
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:21:23 PM
+    return self.load_wsgiapp()
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:21:23 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:21:23 PM
+    mod = importlib.import_module(module)
+Apr 12 07:21:23 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:21:23 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:21:23 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:21:23 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:21:23 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:21:23 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:21:23 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:21:23 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:21:23 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:21:23 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:21:23 PM
+    from config.field_mappings import (
+Apr 12 07:21:23 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:21:23 PM
+[2025-04-12 23:21:23 +0000] [9] [INFO] Worker exiting (pid: 9)
+Apr 12 07:21:24 PM
+[2025-04-12 23:21:24 +0000] [7] [ERROR] Exception in worker process
+Apr 12 07:21:24 PM
+Traceback (most recent call last):
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:21:24 PM
+    worker.init_process()
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:21:24 PM
+    self.load_wsgi()
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:21:24 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:21:24 PM
+    self.callable = self.load()
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:21:24 PM
+    return self.load_wsgiapp()
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:21:24 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:21:24 PM
+    mod = importlib.import_module(module)
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:21:24 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:21:24 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:21:24 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:21:24 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:21:24 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:21:24 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:21:24 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:21:24 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:21:24 PM
+    from config.field_mappings import (
+Apr 12 07:21:24 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:21:24 PM
+[2025-04-12 23:21:24 +0000] [7] [INFO] Worker exiting (pid: 7)
+Apr 12 07:21:24 PM
+[2025-04-12 23:21:24 +0000] [10] [ERROR] Exception in worker process
+Apr 12 07:21:24 PM
+Traceback (most recent call last):
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+Apr 12 07:21:24 PM
+    worker.init_process()
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 135, in init_process
+Apr 12 07:21:24 PM
+    self.load_wsgi()
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+Apr 12 07:21:24 PM
+    self.wsgi = self.app.wsgi()
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 66, in wsgi
+Apr 12 07:21:24 PM
+    self.callable = self.load()
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+Apr 12 07:21:24 PM
+    return self.load_wsgiapp()
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+Apr 12 07:21:24 PM
+    return util.import_app(self.app_uri)
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 370, in import_app
+Apr 12 07:21:24 PM
+    mod = importlib.import_module(module)
+Apr 12 07:21:24 PM
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+Apr 12 07:21:24 PM
+    return _bootstrap._gcd_import(name[level:], package, level)
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+Apr 12 07:21:24 PM
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+Apr 12 07:21:24 PM
+  File "/app/web_app.py", line 17, in <module>
+Apr 12 07:21:24 PM
+    from catalog_parser import CatalogParser
+Apr 12 07:21:24 PM
+  File "/app/catalog_parser.py", line 13, in <module>
+Apr 12 07:21:24 PM
+    from parsers.base_parser import BaseParser
+Apr 12 07:21:24 PM
+  File "/app/parsers/base_parser.py", line 14, in <module>
+Apr 12 07:21:24 PM
+    from utils.column_mapper import ColumnMapper
+Apr 12 07:21:24 PM
+  File "/app/utils/column_mapper.py", line 13, in <module>
+Apr 12 07:21:24 PM
+    from config.field_mappings import (
+Apr 12 07:21:24 PM
+ImportError: cannot import name 'GENERIC_MSRP_PATTERNS' from 'config.field_mappings' (/app/config/field_mappings.py)
+Apr 12 07:21:24 PM
+[2025-04-12 23:21:24 +0000] [10] [INFO] Worker exiting (pid: 10)
+Apr 12 07:21:24 PM
+[2025-04-12 23:21:24 +0000] [1] [ERROR] Worker (pid:8) exited with code 3
+Apr 12 07:21:24 PM
+[2025-04-12 23:21:24 +0000] [1] [ERROR] Worker (pid:10) was sent SIGTERM!
+Apr 12 07:21:24 PM
+[2025-04-12 23:21:24 +0000] [1] [ERROR] Worker (pid:9) was sent SIGTERM!
+Apr 12 07:21:24 PM
+[2025-04-12 23:21:24 +0000] [1] [ERROR] Worker (pid:7) was sent SIGTERM!
+Apr 12 07:21:25 PM
+[2025-04-12 23:21:25 +0000] [1] [ERROR] Shutting down: Master
+Apr 12 07:21:25 PM
+[2025-04-12 23:21:25 +0000] [1] [ERROR] Reason: Worker failed to boot.
